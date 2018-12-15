@@ -4,6 +4,12 @@ services:
   iuliust-gitlab:
     hostname: gitlab.iuliust.fr
     container_name: iuliust-gitlab
+    environment:
+      GITLAB_OMNIBUS_CONFIG: |
+        external_url 'https://gitlab.iuliust.fr'
+        gitlab_rails['gitlab_shell_ssh_port'] = 6022
+        letsencrypt['enable'] = true
+        letsencrypt['contact_emails'] = ['iuliust@gmail.com'] 
     image: gitlab/gitlab-ee:nightly
     ports: [ "6080:80", "6443:443", "6022:22" ]
     restart: always
