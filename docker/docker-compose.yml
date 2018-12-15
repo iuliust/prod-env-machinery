@@ -1,0 +1,19 @@
+version: "3.7"
+
+services:
+  iuliust-gitlab:
+    container_name: iuliust-gitlab
+    image: gitlab/gitlab-ee:nightly
+    ports: [ "6080:80", "6443:443", "6022:22" ]
+    restart: always
+    hostname: localhost
+    volumes:
+      - ../volume_iuliust/gitlab/config:/etc/gitlab
+      - ../volume_iuliust/gitlab/logs:/var/log/gitlab
+      - ../volume_iuliust/gitlab/data:/var/opt/gitlab
+  iuliust-jenkins:
+    container_name: iuliust-jenkins
+    image: gitlab/gitlab-ee:nightly
+    ports: [ "7080:8080", "7050:50000" ]
+    volumes:
+      - ../volume_iuliust/jenkins:/var/jenkins_home
