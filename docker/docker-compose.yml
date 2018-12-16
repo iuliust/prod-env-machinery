@@ -15,9 +15,9 @@ services:
     image: gitlab/gitlab-ee:nightly
     hostname: 'gitlab.iuliust.fr'
     ports: 
-      - '80:80'
-      - '443:443'
-      - '22:22'
+      - '6080:80'
+      - '6443:443'
+      - '6022:22'
     restart: always
     volumes:
       - ../volume_iuliust/gitlab/config:/etc/gitlab
