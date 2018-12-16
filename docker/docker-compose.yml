@@ -2,18 +2,21 @@ version: "3.7"
 
 services:
   iuliust-gitlab:
+
+    image: 'gitlab/gitlab-ce:latest'
+    hostname: 'gitlab.iuliust.fr'
     container_name: iuliust-gitlab
-    # environment:
-    #   GITLAB_OMNIBUS_CONFIG: |
-    #     external_url 'http://gitlab.iuliust.fr:6080'
-    #     gitlab_rails['gitlab_shell_ssh_port'] = 6022
-    #   VIRTUAL_PORT: 443
-    #   VIRTUAL_PROTO: https
-    #   VIRTUAL_HOST: gitlab.iuliust.fr
-    #   LETSENCRYPT_HOST: gitlab.iuliust.fr
-    #   LETSENCRYPT_EMAIL: iuliust@gmail.com
+    environment:
+      GITLAB_OMNIBUS_CONFIG: |
+        external_url 'http://gitlab.iuliust.fr:6080'
+        gitlab_rails['gitlab_shell_ssh_port'] = 6022
+      VIRTUAL_PORT: 443
+      VIRTUAL_PROTO: https
+      VIRTUAL_HOST: gitlab.iuliust.fr
+      LETSENCRYPT_HOST: gitlab.iuliust.fr
+      LETSENCRYPT_ENABLE: true
+      LETSENCRYPT_EMAIL: iuliust@gmail.com
     image: gitlab/gitlab-ee:nightly
-    # hostname: 'gitlab.iuliust.fr'
     ports: 
       - '6080:80'
       - '6443:443'
@@ -30,7 +33,3 @@ services:
     ports: [ "7080:8080", "7050:50000" ]
     volumes:
       - ../volume_iuliust/jenkins:/var/jenkins_home
-# registry_external_url 'http://gitlab-registry.iuliust.fr'
-# gitlab_rails['gitlab_shell_ssh_port'] = 6022
-# letsencrypt['enable'] = true
-# letsencrypt['contact_emails'] = ['iuliust@gmail.com'] 
