@@ -14,7 +14,7 @@ services:
       VIRTUAL_PROTO: https
       VIRTUAL_HOST: gitlab.iuliust.fr
       LETSENCRYPT_HOST: gitlab.iuliust.fr
-      LETSENCRYPT_ENABLE: true
+      LETSENCRYPT_ENABLE: "true"
       LETSENCRYPT_EMAIL: iuliust@gmail.com
     image: gitlab/gitlab-ee:nightly
     ports: 
