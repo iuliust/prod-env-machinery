@@ -3,17 +3,17 @@ version: "3.7"
 services:
   iuliust-gitlab:
     container_name: iuliust-gitlab
-    # environment:
-    #   GITLAB_OMNIBUS_CONFIG: |
-    #     external_url 'http://gitlab.iuliust.fr:6080'
+    environment:
+      GITLAB_OMNIBUS_CONFIG: |
+        external_url 'https://gitlab.iuliust.fr:6443'
     #     gitlab_rails['gitlab_shell_ssh_port'] = 6022
-    #   VIRTUAL_PORT: 443
-    #   VIRTUAL_PROTO: https
-    #   VIRTUAL_HOST: gitlab.iuliust.fr
-    #   LETSENCRYPT_HOST: gitlab.iuliust.fr
-    #   LETSENCRYPT_EMAIL: iuliust@gmail.com
+      VIRTUAL_PORT: 443
+      VIRTUAL_PROTO: https
+      VIRTUAL_HOST: gitlab.iuliust.fr
+      LETSENCRYPT_HOST: gitlab.iuliust.fr
+      LETSENCRYPT_EMAIL: iuliust@gmail.com
     image: gitlab/gitlab-ee:nightly
-    # hostname: 'gitlab.iuliust.fr'
+    hostname: 'gitlab.iuliust.fr'
     ports: 
       - '6080:80'
       - '6443:443'
