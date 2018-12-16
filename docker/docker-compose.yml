@@ -13,7 +13,7 @@ services:
     #   LETSENCRYPT_HOST: gitlab.iuliust.fr
     #   LETSENCRYPT_EMAIL: iuliust@gmail.com
     image: gitlab/gitlab-ee:nightly
-    hostname: 'gitlab.iuliust.fr'
+    # hostname: 'gitlab.iuliust.fr'
     ports: 
       - '6080:80'
       - '6443:443'
