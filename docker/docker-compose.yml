@@ -7,12 +7,6 @@ services:
     hostname: 'gitlab.iuliust.fr'
     container_name: iuliust-gitlab
     environment:
-      GITLAB_OMNIBUS_CONFIG: |
-        external_url 'http://gitlab.iuliust.fr:6080'
-        gitlab_rails['gitlab_shell_ssh_port'] = 6022
-      VIRTUAL_PORT: 443
-      VIRTUAL_PROTO: https
-      VIRTUAL_HOST: gitlab.iuliust.fr
       LETSENCRYPT_HOST: gitlab.iuliust.fr
       LETSENCRYPT_ENABLE: "true"
       LETSENCRYPT_EMAIL: iuliust@gmail.com
