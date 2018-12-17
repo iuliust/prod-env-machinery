@@ -2,10 +2,9 @@ version: "3.7"
 
 services:
   gitlab:
-    image: 'gitlab/gitlab-ee:latest'
-    network_mode: host
-#    networks:
-#      - priv
+    image: 'gitlab/gitlab-ce:latest'
+    networks:
+      - priv
     hostname: 'gitlab.iuliust.fr'
     container_name: gitlab
     environment:
